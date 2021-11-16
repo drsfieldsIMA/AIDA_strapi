@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assets",
+  "info": {
+    "name": "Assets",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Purchase_time": {
+      "type": "datetime"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "admin_user": {
+      "plugin": "admin",
+      "model": "user"
+    },
+    "Slug": {
+      "type": "string"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "sectors": {
+      "via": "assets",
+      "collection": "sectors"
+    }
+  }
+}

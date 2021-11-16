@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sectors",
+  "info": {
+    "name": "Sectors"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Industry": {
+      "type": "enumeration",
+      "enum": [
+        "Defence",
+        "Food",
+        "Marine",
+        "Nuclear",
+        "Oil",
+        "Hydro",
+        "Transport",
+        "Wind"
+      ],
+      "private": true,
+      "required": true
+    },
+    "assets": {
+      "collection": "assets",
+      "via": "sectors",
+      "dominant": true
+    }
+  }
+}
